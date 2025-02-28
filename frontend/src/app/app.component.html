@@ -1,0 +1,53 @@
+<nav class="navbar row">
+    <div class="col-12 col-md-3">
+      <div class="navbar-brand">
+        <a routerLink="/"><img width="150px" src="assets/images/amazon_logo.png" /></a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 mt-2 mt-md-0">
+      <div class="input-group">
+        <input
+          type="text"
+          id="search_field"
+          class="form-control"
+          placeholder="Enter Product Name ..."
+          [(ngModel)]="searchText"
+          (input)="clearSearch()"
+          (keydown.enter)="searchByEnterKey()"
+        />
+        <div class="input-group-append">
+          <button (click)="search()" id="search_btn" class="btn">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-3 mt-4 mt-md-0 text-center">
+      <a routerLink="/cart" class="cart-icon position-relative">
+        <i class="fa fa-shopping-cart fa-2x"></i>
+        <span class="cart-badge badge rounded-pill bg-warning text-dark position-absolute">
+          {{ cartCount }}
+        </span>
+      </a>
+    </div>
+  </nav>
+
+<router-outlet></router-outlet>
+
+<footer class="footer bg-dark text-white py-3">
+  <div class="container text-center">
+    <p class="mb-1">© 2024 SwiftCart . All Rights Reserved.</p>
+    <p>
+      <span class="text-warning mx-2">Privacy Policy</span> |
+      <span class="text-warning mx-2">Terms of Service</span> |
+      <span class="text-warning mx-2">Contact Us</span>
+    </p>
+    <div class="social-icons mt-2">
+      <a href="#" class="text-white mx-2"><i class="fa fa-facebook"></i></a>
+      <a href="#" class="text-white mx-2"><i class="fa fa-twitter"></i></a>
+      <a href="#" class="text-white mx-2"><i class="fa fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
